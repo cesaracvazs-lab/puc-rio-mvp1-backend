@@ -4,7 +4,7 @@ from typing import List
 
 from pydantic import BaseModel
 
-from model.assinatura import Assinatura
+from src.model.assinatura import Assinatura
 
 
 # TODO revisar e validar schemas

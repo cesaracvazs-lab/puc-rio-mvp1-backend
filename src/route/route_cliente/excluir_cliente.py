@@ -1,9 +1,9 @@
 from flask_openapi3 import Tag
 from sqlalchemy.exc import SQLAlchemyError
 
-from model import Session, Cliente
-from model.cliente import cliente_blueprint
-from schemas import ClienteBuscaPorIdSchema, ClienteDelSchema, ErrorSchema
+from src.model import Session, Cliente
+from src.model.cliente import cliente_blueprint
+from src.schemas import ClienteBuscaPorIdSchema, ClienteDelSchema, ErrorSchema
 
 
 excluir_cliente_tag = Tag(name="Excluir Cliente", description="Operação que exclui um Cliente de id equivalente ao passado na requisição")

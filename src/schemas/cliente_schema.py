@@ -3,7 +3,7 @@ from typing import List, Optional
 
 from pydantic import BaseModel
 
-from model.cliente import Cliente
+from src.model.cliente import Cliente
 
 
 # TODO revisar e validar schemas

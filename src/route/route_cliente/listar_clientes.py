@@ -1,8 +1,8 @@
 from flask_openapi3 import Tag
 
-from model import Session, Cliente
-from model.cliente import cliente_blueprint
-from schemas import ListagemClientesSchema, ErrorSchema, apresentar_lista_clientes
+from src.model import Session, Cliente
+from src.model.cliente import cliente_blueprint
+from src.schemas import ListagemClientesSchema, ErrorSchema, apresentar_lista_clientes
 
 
 listar_clientes_tag = Tag(name="Listar Cliente", description="Operações que lista todos os Clientes cadastrados no banco de dados")

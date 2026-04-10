@@ -1,8 +1,8 @@
 from flask_openapi3 import Tag
 
-from model import Session, Assinatura
-from model.assinatura import assinatura_blueprint
-from schemas import ListagemAssinaturasSchema, ErrorSchema, apresentar_lista_assinaturas
+from src.model import Session, Assinatura
+from src.model.assinatura import assinatura_blueprint
+from src.schemas import ListagemAssinaturasSchema, ErrorSchema, apresentar_lista_assinaturas
 
 
 listar_assinatura_tag = Tag(name="Listar Assinaturas", description="Operações que lista todas as assinaturas cadastradas no banco de dados")

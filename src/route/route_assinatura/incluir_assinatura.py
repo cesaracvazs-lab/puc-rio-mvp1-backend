@@ -1,9 +1,9 @@
 from sqlalchemy.exc import IntegrityError
 from flask_openapi3 import Tag
 
-from model import Session, Assinatura
-from model.assinatura import assinatura_blueprint
-from schemas import AssinaturaSchema, AssinaturaViewSchema, ErrorSchema, apresentar_detalhar_assinatura
+from src.model import Session, Assinatura
+from src.model.assinatura import assinatura_blueprint
+from src.schemas import AssinaturaSchema, AssinaturaViewSchema, ErrorSchema, apresentar_detalhar_assinatura
 
 
 incluir_assinatura_tag = Tag(name="Incluir Assinatura", description="Operação que inclui uma Assinatura no banco de dados")

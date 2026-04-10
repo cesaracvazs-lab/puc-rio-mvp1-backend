@@ -1,7 +1,7 @@
 from sqlalchemy import Column, INTEGER, VARCHAR, DECIMAL
 from decimal import Decimal
 
-from model import Base
+from src.model import Base
 
 
 class ProgramaFidelidade(Base):

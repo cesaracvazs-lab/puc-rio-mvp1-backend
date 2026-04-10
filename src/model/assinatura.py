@@ -3,7 +3,7 @@ from flask_openapi3 import APIBlueprint
 from decimal import Decimal
 from datetime import date
 
-from model import Base
+from src.model import Base
 
 
 assinatura_blueprint = APIBlueprint('assinatura', __name__)

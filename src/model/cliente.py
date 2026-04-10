@@ -2,7 +2,7 @@ from sqlalchemy import Column, INTEGER, VARCHAR, DATE, DATETIME, ForeignKey
 from flask_openapi3 import APIBlueprint
 from datetime import date
 
-from model import Base
+from src.model import Base
 
 
 cliente_blueprint = APIBlueprint('cliente', __name__)

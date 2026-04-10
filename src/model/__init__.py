@@ -10,7 +10,7 @@ from .cliente import Cliente
 from .programaFidelidade import ProgramaFidelidade
 
 
-db_path = "database/"
+db_path = "src/database/"
 # Verifica se o diretorio não existe
 if not os.path.exists(db_path):
    # então cria o diretorio

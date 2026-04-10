@@ -2,9 +2,9 @@ from sqlalchemy.exc import IntegrityError
 from flask_openapi3 import Tag
 from datetime import datetime
 
-from model import Session, Cliente
-from model.cliente import cliente_blueprint
-from schemas import ClienteSchema, ClienteViewSchema, ErrorSchema, apresentar_cliente_detalhado
+from src.model import Session, Cliente
+from src.model.cliente import cliente_blueprint
+from src.schemas import ClienteSchema, ClienteViewSchema, ErrorSchema, apresentar_cliente_detalhado
 
 
 incluir_cliente_tag = Tag(name="Incluir Cliente", description="Operação que inclui um Cliente no banco de dados")

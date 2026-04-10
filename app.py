@@ -1,25 +1,21 @@
-from flask_openapi3 import OpenAPI, Info, Tag
+from flask_openapi3 import OpenAPI, Info
 from flask_cors import CORS
 from flask import redirect
-from urllib.parse import unquote
-from sqlalchemy.exc import IntegrityError
 
-from model import Session
-from logger import logger
-from schemas import *
+from src.model.cliente import cliente_blueprint
+from src.model.assinatura import assinatura_blueprint
 
-from model.cliente import cliente_blueprint
-from model.assinatura import assinatura_blueprint
+# rotas de Cliente
+import src.route.route_cliente.incluir_cliente
+import src.route.route_cliente.listar_clientes
+import src.route.route_cliente.detalhar_cliente
+import src.route.route_cliente.excluir_cliente
 
-import route.route_cliente.incluir_cliente
-import route.route_cliente.listar_clientes
-import route.route_cliente.detalhar_cliente
-import route.route_cliente.excluir_cliente
-
-import route.route_assinatura.incluir_assinatura
-import route.route_assinatura.listar_assinaturas
-import route.route_assinatura.detalhar_assinatura
-import route.route_assinatura.excluir_assinatura
+# rotas de Assinatura
+import src.route.route_assinatura.incluir_assinatura
+import src.route.route_assinatura.listar_assinaturas
+import src.route.route_assinatura.detalhar_assinatura
+import src.route.route_assinatura.excluir_assinatura
 
 
 info = Info(title="Minha API", version="1.0.0")

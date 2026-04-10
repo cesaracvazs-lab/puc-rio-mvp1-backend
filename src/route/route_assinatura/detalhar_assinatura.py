@@ -1,8 +1,8 @@
 from flask_openapi3 import Tag
 
-from model import Session, Assinatura
-from model.assinatura import assinatura_blueprint
-from schemas import AssinaturaBuscaSchema, AssinaturaViewSchema, ErrorSchema, apresentar_detalhar_assinatura as apresentar_assinatura_detalhada
+from src.model import Session, Assinatura
+from src.model.assinatura import assinatura_blueprint
+from src.schemas import AssinaturaBuscaSchema, AssinaturaViewSchema, ErrorSchema, apresentar_detalhar_assinatura as apresentar_assinatura_detalhada
 
 
 detalhar_assinatura_tag = Tag(name="Detalhar Assinatura", description="Operação que detalha uma Assinatura de id equivalente ao passado na requisição")

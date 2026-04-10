@@ -1,8 +1,8 @@
 from flask_openapi3 import Tag
 
-from model import Session, Cliente
-from model.cliente import cliente_blueprint
-from schemas import ClienteBuscaPorIdSchema, ClienteViewSchema, ErrorSchema, apresentar_cliente_detalhado
+from src.model import Session, Cliente
+from src.model.cliente import cliente_blueprint
+from src.schemas import ClienteBuscaPorIdSchema, ClienteViewSchema, ErrorSchema, apresentar_cliente_detalhado
 
 
 detalhar_cliente_tag = Tag(name="Detalhar Cliente", description="Operação que detalha um Cliente de id equivalente ao passado na requisição")
