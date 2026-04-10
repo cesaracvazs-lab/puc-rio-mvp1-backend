@@ -1,0 +1,86 @@
+[2026-04-09 20:18:02,195] ERROR log_exception() L875  Exception on /listar_clientes [GET] - call_trace=C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\.venv\Lib\site-packages\flask\app.py L875 
+Traceback (most recent call last):
+  File "C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\.venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\.venv\Lib\site-packages\flask_openapi3\scaffold.py", line 138, in view_func
+    response = func(**func_kwargs)
+  File "C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\route\route_cliente\listar_clientes.py", line 19, in listar_clientes
+    return listar_clientes(lista_clientes), 200
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+TypeError: listar_clientes() takes 0 positional arguments but 1 was given
+[2026-04-09 20:18:02,200] INFO _log() L97   192.168.0.19 - - [09/Apr/2026 20:18:02] "[35m[1mGET /listar_clientes HTTP/1.1[0m" 500 - - call_trace=C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\.venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2026-04-09 20:18:52,421] INFO _log() L97   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.19:5000 - call_trace=C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\.venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2026-04-09 20:18:52,422] INFO _log() L97   [33mPress CTRL+C to quit[0m - call_trace=C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\.venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2026-04-09 20:18:54,039] ERROR log_exception() L875  Exception on /listar_clientes [GET] - call_trace=C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\.venv\Lib\site-packages\flask\app.py L875 
+Traceback (most recent call last):
+  File "C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\.venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\.venv\Lib\site-packages\flask_openapi3\scaffold.py", line 138, in view_func
+    response = func(**func_kwargs)
+  File "C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\route\route_cliente\listar_clientes.py", line 19, in listar_clientes
+    return listar_clientes(lista_clientes), 200
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+TypeError: listar_clientes() takes 0 positional arguments but 1 was given
+[2026-04-09 20:18:54,042] INFO _log() L97   192.168.0.19 - - [09/Apr/2026 20:18:54] "[35m[1mGET /listar_clientes HTTP/1.1[0m" 500 - - call_trace=C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\.venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2026-04-09 20:22:48,322] INFO _log() L97   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.19:5000 - call_trace=C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\.venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2026-04-09 20:22:48,323] INFO _log() L97   [33mPress CTRL+C to quit[0m - call_trace=C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\.venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2026-04-09 20:22:50,294] ERROR log_exception() L875  Exception on /listar_clientes [GET] - call_trace=C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\.venv\Lib\site-packages\flask\app.py L875 
+Traceback (most recent call last):
+  File "C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\.venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\.venv\Lib\site-packages\flask_openapi3\scaffold.py", line 138, in view_func
+    response = func(**func_kwargs)
+  File "C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\route\route_cliente\listar_clientes.py", line 19, in listar_clientes
+    return listar_clientes(lista_clientes), 200
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+TypeError: listar_clientes() takes 0 positional arguments but 1 was given
+[2026-04-09 20:22:50,297] INFO _log() L97   192.168.0.19 - - [09/Apr/2026 20:22:50] "[35m[1mGET /listar_clientes HTTP/1.1[0m" 500 - - call_trace=C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\.venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2026-04-09 20:34:50,764] INFO _log() L97   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.19:5000 - call_trace=C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\.venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2026-04-09 20:34:50,765] INFO _log() L97   [33mPress CTRL+C to quit[0m - call_trace=C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\.venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2026-04-09 20:34:52,866] INFO _log() L97   192.168.0.19 - - [09/Apr/2026 20:34:52] "GET /listar_clientes HTTP/1.1" 200 - - call_trace=C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\.venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2026-04-09 20:35:00,779] INFO _log() L97   192.168.0.19 - - [09/Apr/2026 20:35:00] "[31m[1mPOST /incluir_cliente HTTP/1.1[0m" 400 - - call_trace=C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\.venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2026-04-09 20:35:16,060] INFO _log() L97   192.168.0.19 - - [09/Apr/2026 20:35:16] "GET /detalhar_cliente?id=8 HTTP/1.1" 200 - - call_trace=C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\.venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2026-04-09 20:35:29,548] INFO _log() L97   192.168.0.19 - - [09/Apr/2026 20:35:29] "DELETE /excluir_cliente?id=1 HTTP/1.1" 200 - - call_trace=C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\.venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2026-04-09 20:35:31,996] INFO _log() L97   192.168.0.19 - - [09/Apr/2026 20:35:31] "[33mDELETE /excluir_cliente?id=1 HTTP/1.1[0m" 404 - - call_trace=C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\.venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2026-04-09 20:35:34,734] INFO _log() L97   192.168.0.19 - - [09/Apr/2026 20:35:34] "DELETE /excluir_cliente?id=8 HTTP/1.1" 200 - - call_trace=C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\.venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2026-04-09 20:35:37,645] INFO _log() L97   192.168.0.19 - - [09/Apr/2026 20:35:37] "[33mDELETE /excluir_cliente?id=8 HTTP/1.1[0m" 404 - - call_trace=C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\.venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2026-04-09 20:35:45,777] INFO _log() L97   192.168.0.19 - - [09/Apr/2026 20:35:45] "GET /listar_clientes HTTP/1.1" 200 - - call_trace=C:\Users\C-Vaz\Documents\PUC-Rio\MVP1\back-end\.venv\Lib\site-packages\werkzeug\_internal.py L97  
