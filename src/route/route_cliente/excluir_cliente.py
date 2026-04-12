@@ -9,9 +9,9 @@ from src.schemas import ClienteBuscaPorIdSchema, ClienteExcluirSchema, ErrorSche
 excluir_cliente_tag = Tag(name="Excluir Cliente", description="Operação que exclui um Cliente de id equivalente ao passado na requisição")
 @cliente_blueprint.delete('/excluir_cliente', tags=[excluir_cliente_tag],
                 responses={"200": ClienteExcluirSchema, "400": ErrorSchema, "404": ErrorSchema, "500": ErrorSchema})
-def excluir_cliente(query: ClienteBuscaPorIdSchema):
+def excluir_cliente(body: ClienteBuscaPorIdSchema):
 
-    cliente_id = query.id
+    cliente_id = body.id
 
     session = Session()
 
