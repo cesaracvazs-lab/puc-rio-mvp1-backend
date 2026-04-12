@@ -10,12 +10,12 @@ from src.schemas import ClienteIncluirSchema, ClienteDetalharSchema, ErrorSchema
 incluir_cliente_tag = Tag(name="Incluir Cliente", description="Operação que inclui um Cliente no banco de dados")
 @cliente_blueprint.post('/incluir_cliente', tags=[incluir_cliente_tag],
                 responses={"201": ClienteDetalharSchema, "400": ErrorSchema})
-def incluir_cliente(query: ClienteIncluirSchema):
+def incluir_cliente(body: ClienteIncluirSchema):
 
-    cpf = query.cpf
-    email = query.email
-    nome = query.nome
-    data_nascimento = query.data_nascimento
+    cpf = body.cpf
+    email = body.email
+    nome = body.nome
+    data_nascimento = body.data_nascimento
     
     if data_nascimento:
         try:
