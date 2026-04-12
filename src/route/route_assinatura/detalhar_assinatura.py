@@ -2,13 +2,13 @@ from flask_openapi3 import Tag
 
 from src.model import Session, Assinatura
 from src.model.assinatura import assinatura_blueprint
-from src.schemas import AssinaturaBuscaSchema, AssinaturaViewSchema, ErrorSchema, apresentar_detalhar_assinatura as apresentar_assinatura_detalhada
+from src.schemas import AssinaturaBuscaPorIdSchema, AssinaturaDetalharSchema, ErrorSchema, apresentar_assinatura_detalhada
 
 
 detalhar_assinatura_tag = Tag(name="Detalhar Assinatura", description="Operação que detalha uma Assinatura de id equivalente ao passado na requisição")
 @assinatura_blueprint.get('/detalhar_assinatura', tags=[detalhar_assinatura_tag],
-                responses={"200": AssinaturaViewSchema, "400": ErrorSchema, "404": ErrorSchema})
-def detalhar_assinatura(query: AssinaturaBuscaSchema):
+                responses={"200": AssinaturaDetalharSchema, "400": ErrorSchema, "404": ErrorSchema})
+def detalhar_assinatura(query: AssinaturaBuscaPorIdSchema):
     assinatura_id = query.id
 
     session = Session()
@@ -16,7 +16,7 @@ def detalhar_assinatura(query: AssinaturaBuscaSchema):
         assinatura = session.query(Assinatura).filter(Assinatura.id == assinatura_id).first()
 
         if not assinatura:
-            return {"message": "Assinatura não encontrada"}, 404
+            return {"error": "Assinatura nao encontrada"}, 404
 
         return apresentar_assinatura_detalhada(assinatura), 200
     finally:

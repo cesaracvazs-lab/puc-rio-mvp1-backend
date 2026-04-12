@@ -6,7 +6,6 @@ from pydantic import BaseModel
 from src.model.cliente import Cliente
 
 
-# TODO revisar e validar schemas
 class ClienteIncluirSchema(BaseModel):
 	"""Define as entradas esperadas na inclusão de um cliente em incluir_cliente."""
 
@@ -65,7 +64,7 @@ class ClienteDetalharSchema(BaseModel):
 class ClienteExcluirSchema(BaseModel):
 	"""Define a estrutura da resposta de excluir_cliente."""
 
-	mesage: str
+	message: str = "Sucesso ao excluir Cliente"
 	id: int
 
 

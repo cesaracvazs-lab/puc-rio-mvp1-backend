@@ -1,50 +1,90 @@
-# TODO adaptar README
-Em ambos os repositórios deve existir um arquivo README.md contendo as seguintes
-informações:
+# MVP1 - Back-end da API
 
-● Título e uma breve descrição do projeto;
-● Instruções de Instalação, tais como:
-    ○ descrever as etapas necessárias para que os usuários possam
-    configurar o ambiente local,
-    ○ instalar dependências,
-    ○ comandos de inicialização, etc;
-● Certifique-se de que o arquivo README.md seja formatado de forma clara e
-use cabeçalhos, listas e formatação de texto para tornar a documentação fácil
-de ler.
+API REST desenvolvida com Flask, Flask-OpenAPI3 e SQLAlchemy para gerenciamento de clientes e assinaturas.
 
-
-# Minha API
-
-Este pequeno projeto faz parte do material diático da Disciplina **Desenvolvimento Full Stack Básico** 
-
-O objetivo aqui é ilutsrar o conteúdo apresentado ao longo das três aulas da disciplina.
+O projeto disponibiliza endpoints documentados no Swagger e utiliza SQLite como banco de dados local.
 
 ---
-## Como executar 
 
+## Tecnologias utilizadas
 
-Será necessário ter todas as libs python listadas no `requirements.txt` instaladas.
-Após clonar o repositório, é necessário ir ao diretório raiz, pelo terminal, para poder executar os comandos descritos abaixo.
+- Python 3.10+
+- Flask
+- Flask-OpenAPI3
+- SQLAlchemy
+- SQLite
 
-> É fortemente indicado o uso de ambientes virtuais do tipo [virtualenv](https://virtualenv.pypa.io/en/latest/installation.html).
+---
 
+## Pré-requisitos
+
+Antes de iniciar, você precisa ter instalado:
+
+- Python 3.10 ou superior
+- Pip
+
+---
+
+## Instalação e configuração do ambiente
+
+1. Clone o repositório em https://github.com/cesaracvazs-lab/puc-rio-mvp1-backend.git
+2. Acesse a pasta do projeto
+3. Crie e ative um ambiente virtual
+4. Instale as dependências
+
+### 1) Criar ambiente virtual
+
+No Windows (PowerShell):
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
 ```
-(env)$ pip install -r requirements.txt
+
+No Linux/Mac:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
 ```
 
-Este comando instala as dependências/bibliotecas, descritas no arquivo `requirements.txt`.
+### 2) Instalar dependências
 
-Para executar a API  basta executar:
-
-```
-(env)$ flask run --host 0.0.0.0 --port 5000
+```bash
+pip install -r requirements.txt
 ```
 
-Em modo de desenvolvimento é recomendado executar utilizando o parâmetro reload, que reiniciará o servidor
-automaticamente após uma mudança no código fonte. 
+---
 
-```
-(env)$ flask run --host 0.0.0.0 --port 5000 --reload
+## Como executar a aplicação
+
+Com o ambiente virtual ativo, execute:
+
+```bash
+flask run --host 0.0.0.0 --port 5000
 ```
 
-Abra o [http://localhost:5000/#/](http://localhost:5000/#/) no navegador para verificar o status da API em execução.
+---
+
+## Documentação da API
+
+Após iniciar o servidor, acesse no navegador:
+
+- http://localhost:5000/
+- http://localhost:5000/openapi
+
+---
+
+## Estrutura resumida do projeto
+
+- `app.py`: ponto de entrada da aplicação
+- `src/model`: modelos e configuração do banco
+- `src/route`: endpoints da API
+- `src/schemas`: schemas de entrada e saída
+
+---
+
+## Observações
+
+- O banco SQLite é criado localmente em `src/database/db.sqlite3`.
+- Para reinstalar dependências do zero, recrie o ambiente virtual e rode novamente `pip install -r requirements.txt`.

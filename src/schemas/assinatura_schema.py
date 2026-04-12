@@ -7,48 +7,33 @@ from pydantic import BaseModel
 from src.model.assinatura import Assinatura
 
 
-# TODO revisar e validar schemas
-class AssinaturaSchema(BaseModel):
-	"""Define como uma nova assinatura a ser inserida deve ser representada."""
-
-	nome: str = "Premium"
-	valor_mensal: Decimal = Decimal("99.99")
-
-
-class AssinaturaBuscaSchema(BaseModel):
-	"""Define como deve ser a estrutura que representa a busca por id."""
+class AssinaturaBuscaPorIdSchema(BaseModel):
+	"""Define as entradas esperadas na busca de uma assinatura por id."""
 
 	id: int = 1
 
 
-class AssinaturaResumoSchema(BaseModel):
-	"""Define a estrutura simplificada de assinatura para listagens."""
+class AssinaturaListadoSchema(BaseModel):
+	"""Define o modelo de assinatura listada na resposta de listar_assinaturas."""
 
 	id: int = 1
 	nome: str = "Premium"
 	valor_mensal: Decimal = Decimal("99.99")
 
 
-class ListagemAssinaturasSchema(BaseModel):
-	"""Define como uma listagem de assinaturas será retornada."""
+class AssinaturaListarSchema(BaseModel):
+	"""Define a resposta de listar_assinaturas."""
 
-	assinaturas: List[AssinaturaResumoSchema]
+	assinaturas: List[AssinaturaListadoSchema]
 
 
-class AssinaturaViewSchema(BaseModel):
-	"""Define como uma assinatura será retornada em detalhes."""
+class AssinaturaDetalharSchema(BaseModel):
+	"""Define o modelo de uma assinatura na resposta de detalhar_assinatura."""
 
 	id: int = 1
 	nome: str = "Premium"
 	valor_mensal: Decimal = Decimal("99.99")
 	data_cadastro: str = "09/04/2026"
-
-
-class AssinaturaDelSchema(BaseModel):
-	"""Define como deve ser a estrutura do dado retornado após remoção."""
-
-	mesage: str
-	id: int
 
 
 def _formata_data(valor: date) -> str:
@@ -69,7 +54,7 @@ def apresentar_lista_assinaturas(assinaturas: List[Assinatura]):
 	return {"assinaturas": result}
 
 
-def apresentar_detalhar_assinatura(assinatura: Assinatura):
+def apresentar_assinatura_detalhada(assinatura: Assinatura):
 	"""Retorna uma representação detalhada da assinatura."""
 
 	return {

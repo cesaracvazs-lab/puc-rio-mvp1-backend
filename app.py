@@ -13,13 +13,15 @@ import src.route.route_cliente.excluir_cliente
 import src.route.route_cliente.atualizar_cliente
 
 # rotas de Assinatura
-import src.route.route_assinatura.incluir_assinatura
 import src.route.route_assinatura.listar_assinaturas
 import src.route.route_assinatura.detalhar_assinatura
-import src.route.route_assinatura.excluir_assinatura
 
 
-info = Info(title="Minha API", version="1.0.0")
+info = Info(
+    title="API de Clientes e Assinaturas",
+    version="1.0.0",
+    description="API REST para gerenciamento de clientes e assinaturas com documentacao OpenAPI.",
+)
 app = OpenAPI(__name__, info=info)
 app.json.sort_keys = False
 CORS(app)
