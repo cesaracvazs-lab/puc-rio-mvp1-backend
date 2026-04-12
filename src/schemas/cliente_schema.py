@@ -1,7 +1,7 @@
 from datetime import date, datetime
 from typing import List, Optional
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 
 from src.model.cliente import Cliente
 
@@ -9,10 +9,21 @@ from src.model.cliente import Cliente
 class ClienteIncluirSchema(BaseModel):
 	"""Define as entradas esperadas na inclusão de um cliente em incluir_cliente."""
 
-	nome: Optional[str] = "Nome Sobrenome"
-	cpf: str = "01234567890"
-	email: str = "cliente@exemplo.com"
-	data_nascimento: Optional[str] = "01/01/2001"
+	model_config = ConfigDict(
+		json_schema_extra={
+			"example": {
+				"nome": "Nome Sobrenome",
+				"cpf": "01234567890",
+				"email": "cliente@exemplo.com",
+				"data_nascimento": "01/01/2001",
+			}
+		}
+	)
+
+	nome: str
+	cpf: str
+	email: str
+	data_nascimento: str
 
 
 class ClienteBuscaPorIdSchema(BaseModel):
