@@ -7,7 +7,6 @@ import os
 from .base import Base
 from .assinatura import Assinatura
 from .cliente import Cliente
-from .programaFidelidade import ProgramaFidelidade
 
 
 db_path = "src/database/"

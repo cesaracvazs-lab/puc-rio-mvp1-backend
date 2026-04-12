@@ -4,18 +4,18 @@ from datetime import datetime
 
 from src.model import Session, Cliente
 from src.model.cliente import cliente_blueprint
-from src.schemas import ClienteSchema, ClienteViewSchema, ErrorSchema, apresentar_cliente_detalhado
+from src.schemas import ClienteIncluirSchema, ClienteDetalharSchema, ErrorSchema, apresentar_cliente_detalhado
 
 
 incluir_cliente_tag = Tag(name="Incluir Cliente", description="Operação que inclui um Cliente no banco de dados")
 @cliente_blueprint.post('/incluir_cliente', tags=[incluir_cliente_tag],
-                responses={"201": ClienteViewSchema, "400": ErrorSchema})
-def incluir_cliente(body: ClienteSchema):
+                responses={"201": ClienteDetalharSchema, "400": ErrorSchema})
+def incluir_cliente(query: ClienteIncluirSchema):
 
-    cpf = body.cpf
-    email = body.email
-    nome = body.nome
-    data_nascimento = body.data_nascimento
+    cpf = query.cpf
+    email = query.email
+    nome = query.nome
+    data_nascimento = query.data_nascimento
     
     if data_nascimento:
         try:

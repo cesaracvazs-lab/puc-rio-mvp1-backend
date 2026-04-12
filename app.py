@@ -10,6 +10,7 @@ import src.route.route_cliente.incluir_cliente
 import src.route.route_cliente.listar_clientes
 import src.route.route_cliente.detalhar_cliente
 import src.route.route_cliente.excluir_cliente
+import src.route.route_cliente.atualizar_cliente
 
 # rotas de Assinatura
 import src.route.route_assinatura.incluir_assinatura

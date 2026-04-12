@@ -7,8 +7,8 @@ from src.model.cliente import Cliente
 
 
 # TODO revisar e validar schemas
-class ClienteSchema(BaseModel):
-	"""Define como um novo cliente a ser inserido deve ser representado."""
+class ClienteIncluirSchema(BaseModel):
+	"""Define as entradas esperadas na inclusão de um cliente em incluir_cliente."""
 
 	nome: Optional[str] = "Nome Sobrenome"
 	cpf: str = "01234567890"
@@ -17,13 +17,23 @@ class ClienteSchema(BaseModel):
 
 
 class ClienteBuscaPorIdSchema(BaseModel):
-	"""Define como deve ser a estrutura que representa a busca por id."""
+	"""Define as entradas esperadas na busca de um cliente por id."""
 
 	id: int = 1
 
 
-class ClienteResumoSchema(BaseModel):
-	"""Define a estrutura simplificada de cliente para listagens."""
+class ClienteAtualizarSchema(BaseModel):
+	"""Define as entradas esperadas na atualização de um cliente em atualizar_cliente."""
+
+	id: int = 1
+	nome: Optional[str] = None
+	email: Optional[str] = None
+	data_nascimento: Optional[str] = None
+	assinatura_id: Optional[int] = None
+
+
+class ClienteListadoSchema(BaseModel):
+	"""Define o modelo de cliente listado na resposta de listar_clientes."""
 
 	id: int = 1
 	nome: Optional[str] = "Nome Sobrenome"
@@ -31,14 +41,14 @@ class ClienteResumoSchema(BaseModel):
 	estado_assinatura: Optional[int] = 1
 
 
-class ListagemClientesSchema(BaseModel):
-	"""Define como uma listagem de clientes será retornada."""
+class ClienteListarSchema(BaseModel):
+	"""Define a resposta de listar_clientes."""
 
-	clientes: List[ClienteResumoSchema]
+	clientes: List[ClienteListadoSchema]
 
 
-class ClienteViewSchema(BaseModel):
-	"""Define como um cliente será retornado em detalhes."""
+class ClienteDetalharSchema(BaseModel):
+	"""Define o modelo de um cliente na resposta de detalhar_cliente."""
 
 	id: int = 1
 	cpf: str = "01234567890"
@@ -52,8 +62,8 @@ class ClienteViewSchema(BaseModel):
 	data_vigencia_assinatura: Optional[str] = "09/05/2026"
 
 
-class ClienteDelSchema(BaseModel):
-	"""Define como deve ser a estrutura do dado retornado após remoção."""
+class ClienteExcluirSchema(BaseModel):
+	"""Define a estrutura da resposta de excluir_cliente."""
 
 	mesage: str
 	id: int

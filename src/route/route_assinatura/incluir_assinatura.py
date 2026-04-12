@@ -9,12 +9,12 @@ from src.schemas import AssinaturaSchema, AssinaturaViewSchema, ErrorSchema, apr
 incluir_assinatura_tag = Tag(name="Incluir Assinatura", description="Operação que inclui uma Assinatura no banco de dados")
 @assinatura_blueprint.post('/incluir_assinatura', tags=[incluir_assinatura_tag],
                 responses={"201": AssinaturaViewSchema, "400": ErrorSchema})
-def incluir_assinatura(body: AssinaturaSchema):
+def incluir_assinatura(query: AssinaturaSchema):
 
     session = Session()
     assinatura = Assinatura(
-        nome=body.nome,
-        valor_mensal=body.valor_mensal,
+        nome=query.nome,
+        valor_mensal=query.valor_mensal,
     )
 
     try:
